@@ -17,11 +17,16 @@
 
   };
 
-  outputs =
-    { flake-parts, systems, ... }@inputs:
+
+  outputs = inputs @ {
+    flake-parts,
+    systems, 
+    nixpkgs,
+    home-manager,
+    ...
+  }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ ./nixos95 ];
-      #nixosModules.nixos95 = import ./nixos95;
       systems = import systems;
     };
 }
