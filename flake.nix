@@ -21,7 +21,7 @@
     { flake-parts, systems, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ ./nixos95 ];
-      nixosModules.nixos95 = import ./nixos95;
+      #nixosModules.nixos95 = import ./nixos95;
       systems = import systems;
     };
 }
