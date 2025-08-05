@@ -1,4 +1,5 @@
-{ config, lib, ...}: let 
+{ config, lib, pkgs, ... }: let
+
   cfg = config.nixos95;
 in {
 
